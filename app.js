@@ -6,27 +6,27 @@ var cookieParser = require ('cookie-parser');
 var bodyParser = require ('body-parser');
 var session = require('express-session');
 var fs = require('fs');
-var https = require('https');
+// var https = require('https');
 
 
-var certOptions = {
-  key: fs.readFileSync(path.resolve('routes/server.key')),
-  cert: fs.readFileSync(path.resolve('routes/server.crt'))
-}
-var app = express();
-var server = https.createServer(certOptions, app).listen(8083)
-
-
-// var http = require('http');
-
+// var certOptions = {
+//   key: fs.readFileSync(path.resolve('routes/server.key')),
+//   cert: fs.readFileSync(path.resolve('routes/server.crt'))
+// }
 // var app = express();
+// var server = https.createServer(certOptions, app).listen(8083)
 
-// // These could (should) be set as env vars.
-// var port = process.env.PORT || 5000;
-// var host = process.env.HOST || 'localhost';
 
-// // No matter what hits the server, we send the same thing.
-// http.createServer(app).listen(port, host);
+var http = require('http');
+
+var app = express();
+
+// These could (should) be set as env vars.
+var port = process.env.PORT || 5000;
+var host = process.env.HOST || 'localhost';
+
+// No matter what hits the server, we send the same thing.
+http.createServer(app).listen(port, host);
 
 // // This message prints in the console when the app starts.
 // console.log(`App running at http://${host}:${port}`);
