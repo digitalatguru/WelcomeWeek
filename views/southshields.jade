@@ -1,0 +1,190 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title South Shields Explorer
+    meta(name='viewport', content='initial-scale=1,maximum-scale=1,user-scalable=no')
+    script(src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js')
+    link(href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css', rel='stylesheet')
+    script(src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.0/turf.min.js')
+    style.
+      body { margin:0; padding:0; }
+      .caption-content{
+        width: 100%;
+        height: 100%;
+      }
+      #map { position:absolute; top:0; bottom:0; width:100%}
+      .mapboxgl-popup {
+        max-width: 200px;
+      }
+      .mapboxgl-popup-content {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+  body
+
+    #map    
+
+    script.
+      mapboxgl.accessToken = 'pk.eyJ1IjoibW9vemhhbnNoIiwiYSI6ImNqamE4cmlxeDM0ZjczcnMybjBkcDR5bW4ifQ.zRf5unVap1cQOgTanCrx8w';
+      var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/light-v9',
+      center: [-1.427296, 54.999973], // starting position
+      zoom: 15 // starting zoom
+      });
+      map.addControl(new mapboxgl.NavigationControl());
+      // Add geolocate control to the map.
+      var geolocate = new mapboxgl.GeolocateControl({positionOptions: {enableHighAccuracy: true},trackUserLocation: true});
+      map.addControl(geolocate);
+      geolocate.on('geolocate', function(e) {
+      var lon = e.coords.longitude;
+      var lat = e.coords.latitude;
+      var position = [lon, lat];
+
+      var geojson = {
+          "type": "FeatureCollection",
+          "features": [{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.434379, 54.996972]
+          },
+          properties: {
+            title: 'Car Park',
+            description: 'Car Park',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134847&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.439990, 54.997143]
+          },
+          properties: {
+            title: 'Dutch DFDS',
+            description: 'DFDS',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134841&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.433382, 54.998449]
+          },
+          properties: {
+            title: 'Geordie Gambling',
+            description: 'Gambling',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134835&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.432510, 54.999081]
+          },
+          properties: {
+            title: 'No pub',
+            description: 'Pub',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.430718, 54.996828] 
+          },
+          properties: {
+            title: 'Historic England',
+            description: 'Historic England',
+            sounds: '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134829&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+          }
+      },{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.615742, 54.980683]
+          },
+          properties: {
+            title: 'Car Park test',
+            description: 'Car Park',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134847&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.614136, 54.980192]
+          },
+          properties: {
+            title: 'Dutch DFDS test',
+            description: 'DFDS',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134841&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.613057, 54.979418]
+          },
+          properties: {
+            title: 'Geordie Gambling test',
+            description: 'Gambling',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134835&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+
+          }
+      }, {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-1.611688, 54.981133]
+          },
+          properties: {
+            title: 'No pub test',
+            description: 'Pub',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+
+          }
+      }]
+      };
+
+
+      var linestrings = {
+          "type": "FeatureCollection",
+          "features": []
+      };
+      var distances = [];
+
+      var i;
+      for (i = 0; i < geojson.features.length; i++) { 
+        var linestring = {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [position, geojson.features[i].geometry.coordinates]
+            }
+        }; 
+      linestrings.features.push(linestring);  
+      var distance = turf.lineDistance(linestrings.features[i]).toLocaleString();
+
+      distances.push(distance);
+      if (distances[i] < 0.2) {
+
+        new mapboxgl.Marker(geojson)
+          .setLngLat(geojson.features[i].geometry.coordinates)
+          .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+          .setHTML('<h3>' + geojson.features[i].properties.sounds))
+          .addTo(map);
+        } else {
+        new mapboxgl.Marker({color: 'grey'})
+          .setLngLat(geojson.features[i].geometry.coordinates)
+          .addTo(map);  
+        };
+        };
+
+      });
