@@ -89,7 +89,7 @@ html
           properties: {
             title: 'No pub',
             description: 'Pub',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
 
           }
       }, {
@@ -101,7 +101,7 @@ html
           properties: {
             title: 'Historic England',
             description: 'Historic England',
-            sounds: '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134829&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+            sounds: '<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134829&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
           }
       },{
           type: 'Feature',
@@ -112,7 +112,7 @@ html
           properties: {
             title: 'Car Park test',
             description: 'Car Park',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134847&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134847&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
           }
       }, {
           type: 'Feature',
@@ -123,7 +123,7 @@ html
           properties: {
             title: 'Dutch DFDS test',
             description: 'DFDS',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134841&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134841&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
 
           }
       }, {
@@ -135,7 +135,7 @@ html
           properties: {
             title: 'Geordie Gambling test',
             description: 'Gambling',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134835&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134835&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
 
           }
       }, {
@@ -147,7 +147,7 @@ html
           properties: {
             title: 'No pub test',
             description: 'Pub',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true&visual=true"></iframe>'
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
 
           }
       }]
@@ -173,7 +173,7 @@ html
       var distance = turf.lineDistance(linestrings.features[i]).toLocaleString();
 
       distances.push(distance);
-      if (distances[i] < 0.2) {
+      if (distances[i] < 0.08) {
 
         new mapboxgl.Marker(geojson)
           .setLngLat(geojson.features[i].geometry.coordinates)
