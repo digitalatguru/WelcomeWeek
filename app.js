@@ -54,9 +54,7 @@ app.get('/southshields', function(req, res){
   res.render('southshields');
 });
 app.get('/ontheway', function(req, res){
-  res.render('ontheway', {
-    title: 'On The Way'
-  });
+  res.render('ontheway');
 });
 
 module.exports = app;
