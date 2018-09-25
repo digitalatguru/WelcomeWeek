@@ -103,57 +103,20 @@ html
             description: 'Historic England',
             sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134829&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
           }
-      },{
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [-1.573540, 54.986130]
-          },
-          properties: {
-            title: 'Car Park test',
-            description: 'Car Park',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134847&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
-          }
       }, {
           type: 'Feature',
           geometry: {
             type: 'Point',
-            coordinates: [-1.572866, 54.986442]
+            coordinates: [-1.435899, 54.997931] 
           },
           properties: {
-            title: 'Dutch DFDS test',
-            description: 'DFDS',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134841&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
-
-          }
-      }, {
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [-1.572003, 54.986498]
-          },
-          properties: {
-            title: 'Geordie Gambling test',
-            description: 'Gambling',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134835&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
-
-          }
-      }, {
-          type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [-1.573372, 54.986530]
-          },
-          properties: {
-            title: 'No pub test',
-            description: 'Pub',
-            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/504134832&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
-
+            title: 'Conversation',
+            description: 'Conversation',
+            sounds: '<iframe width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/505218567&color=%23acd5d3&auto_play=false&hide_related=true&show_comments=flase&show_user=false&show_reposts=false&show_teaser=false&visual=true"></iframe>'
           }
       }]
       };
-
-
+      
       var linestrings = {
           "type": "FeatureCollection",
           "features": []
@@ -180,7 +143,6 @@ html
           .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
           .setHTML('<h3>' + geojson.features[i].properties.sounds))
           .addTo(map);
-          distances[i] = 0;
         } else {
         new mapboxgl.Marker({color: 'grey'})
           .setLngLat(geojson.features[i].geometry.coordinates)
