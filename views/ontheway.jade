@@ -30,16 +30,20 @@ html
     #map
   script.
       mapboxgl.accessToken = 'pk.eyJ1IjoibW9vemhhbnNoIiwiYSI6ImNqamE4cmlxeDM0ZjczcnMybjBkcDR5bW4ifQ.zRf5unVap1cQOgTanCrx8w';
-      const map = new mapboxgl.Map({
-      container: 'map',
+      var map = new mapboxgl.Map({
+      container: 'map', // container id
       style: 'mapbox://styles/moozhansh/cjmi8y8gd0aca2srzjdhoglqa',
-      center: [-1.599925, 54.970298],
-      zoom: 12.0
-      });      
+      center: [-1.599925, 54.970298], // starting position
+      zoom: 13 // starting zoom
+      });
+      map.addControl(new mapboxgl.NavigationControl());
+      // Add geolocate control to the map.
+      var geolocate = new mapboxgl.GeolocateControl({positionOptions: {enableHighAccuracy: true},trackUserLocation: true});
+      map.addControl(geolocate);
 
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['wallsend']
+          layers: ['wallsend-full']
         });
 
         if (!features.length) {
@@ -50,8 +54,7 @@ html
 
         var popup = new mapboxgl.Popup({className:'popups'})
           .setLngLat(feature.geometry.coordinates)
-          .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.image + '</h3><p>' + feature.properties.description + '</p>')
+          .setHTML('<h3>' + feature.properties.title + '</h3>' + "<img src='" + feature.properties.image + "'" + " " + "style='height: 100%; width: 100%; object-fit: contain" + "'>" + '<p>' + feature.properties.description + '</p>')
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
       });
-
