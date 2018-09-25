@@ -31,10 +31,10 @@ html
   script.
       mapboxgl.accessToken = 'pk.eyJ1IjoibW9vemhhbnNoIiwiYSI6ImNqamE4cmlxeDM0ZjczcnMybjBkcDR5bW4ifQ.zRf5unVap1cQOgTanCrx8w';
       var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/moozhansh/cjmi8y8gd0aca2srzjdhoglqa',
-      center: [-1.599925, 54.970298], // starting position
-      zoom: 13 // starting zoom
+      container: 'map',
+      style: 'mapbox://styles/moozhansh/cjmicr2igo90q2sqax9x3xk2u',
+      center: [-1.599925, 54.970298],
+      zoom: 13
       });
       map.addControl(new mapboxgl.NavigationControl());
       // Add geolocate control to the map.
@@ -43,7 +43,7 @@ html
 
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['wallsend-full']
+          layers: ['tyne']
         });
 
         if (!features.length) {
