@@ -173,7 +173,7 @@ html
       var distance = turf.lineDistance(linestrings.features[i]).toLocaleString();
 
       distances.push(distance);
-      if (distances[i] < 0.005) {
+      if (distances[i] < 0.01) {
         distances[i] = 12;
         new mapboxgl.Marker(geojson)
           .setLngLat(geojson.features[i].geometry.coordinates)
