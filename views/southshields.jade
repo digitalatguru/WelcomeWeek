@@ -174,12 +174,13 @@ html
 
       distances.push(distance);
       if (distances[i] < 0.01) {
-        distances[i] = 12;
+
         new mapboxgl.Marker(geojson)
           .setLngLat(geojson.features[i].geometry.coordinates)
           .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
           .setHTML('<h3>' + geojson.features[i].properties.sounds))
           .addTo(map);
+        distances[i] = 0;        
         } else {
         new mapboxgl.Marker({color: 'grey'})
           .setLngLat(geojson.features[i].geometry.coordinates)
