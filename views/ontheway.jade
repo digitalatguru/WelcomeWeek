@@ -36,6 +36,14 @@ html
       center: [-1.427296, 54.999973],
       zoom: 12.0
       });
+      mapboxgl.accessToken = 'pk.eyJ1IjoibW9vemhhbnNoIiwiYSI6ImNqamE4cmlxeDM0ZjczcnMybjBkcDR5bW4ifQ.zRf5unVap1cQOgTanCrx8w';
+      const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/moozhansh/cjmi8y8gd0aca2srzjdhoglqa',
+      center: [-1.599925, 54.970298],
+      zoom: 12.0
+      });      
+
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
           layers: ['wallsend']
@@ -49,7 +57,7 @@ html
 
         var popup = new mapboxgl.Popup({className:'popups'})
           .setLngLat(feature.geometry.coordinates)
-          .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+          .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.image + '</h3><p>' + feature.properties.description + '</p>')
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
       });
