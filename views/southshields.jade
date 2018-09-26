@@ -60,7 +60,7 @@ html
           type: 'Feature',
           geometry: {
             type: 'Point',
-            coordinates: [-1.439990, 54.997143]
+            coordinates: [-1.438203, 54.997494]
           },
           properties: {
             title: 'Dutch DFDS',
@@ -136,7 +136,7 @@ html
       var distance = turf.lineDistance(linestrings.features[i]).toLocaleString();
 
       distances.push(distance);
-      if (distances[i] < 0.01) {
+      if (distances[i] < 0.02) {
 
         new mapboxgl.Marker(geojson)
           .setLngLat(geojson.features[i].geometry.coordinates)
